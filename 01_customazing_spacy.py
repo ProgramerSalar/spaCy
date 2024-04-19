@@ -15,4 +15,5 @@ def load_data(file):
     return (data)
 
 
-
+# a = load_data('F:\spacy\data\hp_characters.json')
+# print(a)
