@@ -17,7 +17,7 @@ def load_data(file):
 
 def generate_better_characters(file):
     data = load_data(file)
-    # print("data", data)
+    print("data", len(data))
     # create a new list in which store the new charater of data 
     new_characters = []
     for item in data:
@@ -28,8 +28,42 @@ def generate_better_characters(file):
         # we will replace the data 
         item = item.replace("The", "").replace("the", "").replace("and", "").replace("And", "")
         # print(item)
-        names = item.split(" ")
-        print(names)
+        names = item.split(" ")  # split the data using space 
+        # print(names)
+        
+        for name in names:
+            name = name.strip()   # strip the space in data -> assume that names are three, three differen name sare arranged in new column 
+            # print(name)
+            new_characters.append(name)
+            # print(new_characters)
+            
+            
+        if "(" in item:
+            names = item.split("(")   
+            # print(names)
+            for name in names:
+                name = name.replace(")", "").strip()
+                # print(name)
+                new_characters.append(name)
+                # print(new_characters)
+                
+        if "," in item:
+            names = item.split(",")
+            for name in names:
+                name = name.replace("and", "").strip()
+                if " " in name:
+                    new_names = name.split()
+                    # print(new_names)
+                    for x in new_names:
+                        x = x.strip()
+                        new_characters.append(x)
+                        
+                new_characters.append(name)
+    print(len(new_characters))
+    # print("new_character", new_characters)
+        
+                
+            
     
 
 
