@@ -131,7 +131,12 @@ patterns = create_training_data("data\\hp_characters.json", "PERSON")
 generate_rules(patterns)
 
 
-
+def test_model(model, text):
+    doc = nlp(text)
+    results = []
+    for ent in doc.ents:
+        results.append(ent.text)
+    return (results)
 
 
 nlp = spacy.load("hp_ner")
@@ -159,14 +164,20 @@ with open("F:\spacy\data\hp.txt", "r") as f:
         # [2:]: This is a slice operation that takes all elements of the list starting from the third element (index 2) to the end. This is used because the first two elements (at index 0 and 1) are usually the chapter number and title, which are not needed if you’re only interested in the content segments themselves.
         segments = chapter.split("\n\n")[2:]
         # print(segments)
-        
+        hits = []
         for segment in segments:
             # print(segment)
             segment = segment.strip()
             # print(segment)
             segment = segment.replace("\n", " ")
             # print(segment)
-            
+            results = test_model(nlp, segment)
+            # print(results)
+            for result in results:
+                hits.append(result)
+                
+            # print(hits)
+                
         
         
         
