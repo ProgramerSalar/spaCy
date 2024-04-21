@@ -77,6 +77,22 @@ def generate_better_characters(file):
     return (final_characters)
                 
     
+# Certainly! The create_training_data function appears to be part of a machine learning or natural language processing (NLP) pipeline. Let’s break down what it does:
+
+# Input Parameters:
+# file: This parameter likely represents a file (such as a text file or dataset) containing some data.
+# type: This parameter specifies the label or category associated with the data. For example, it could be used to indicate whether the data represents positive or negative sentiment, different classes of characters, or any other relevant classification.
+# Function Steps:
+# The function starts by calling another function called generate_better_characters(file). The purpose of this function is not explicitly clear from the snippet, but it likely processes the data in some way.
+# Next, the function initializes an empty list called patterns.
+# It then iterates over the data (presumably obtained from generate_better_characters(file)).
+# For each item in the data, it creates a dictionary (referred to as a “pattern”) with two keys:
+# "label": This key holds the value of the type parameter, which represents the label or category.
+# "pattern": This key holds the data item itself.
+# The created pattern dictionaries are appended to the patterns list.
+# Finally, the function returns the list of patterns.
+# Output:
+# The function returns a list of dictionaries, where each dictionary contains a label and the corresponding data pattern.
 
 def create_training_data(file, type):
     data = generate_better_characters(file)
@@ -94,14 +110,25 @@ def create_training_data(file, type):
 
 
 def generate_rules(patterns):
+    
+    # recognize the English pattern
     nlp = English()
+    # using the EntityRuler class from spacy.
+    # The EntityRuler is a pipeline component in the spaCy library, which is used for rule-based named entity recognition (NER). It allows you to define patterns that can be used to identify and label specific spans of text within a document.
     ruler = EntityRuler(nlp)
+    # line adds the specified patterns (from the input parameter) to the entity ruler. These patterns define the entities or phrases that the model should recognize.
     ruler.add_patterns(patterns)
+    #  line adds the entity ruler to the NLP pipeline.
     nlp.add_pipe(ruler)
+    # line saves the entire NLP pipeline (including the entity ruler) to disk with the name "hp_ner".
     nlp.to_disk("hp_ner")
     
     
 
 
-a = create_training_data("F:\spacy\data\hp_characters.json", "Person")
-print(a)
+# a = create_training_data("F:\spacy\data\hp_characters.json", "Person")
+# print(a)
+
+
+
+
