@@ -111,24 +111,28 @@ def create_training_data(file, type):
 
 def generate_rules(patterns):
     
-    # recognize the English pattern
-    nlp = English()
-    # using the EntityRuler class from spacy.
-    # The EntityRuler is a pipeline component in the spaCy library, which is used for rule-based named entity recognition (NER). It allows you to define patterns that can be used to identify and label specific spans of text within a document.
-    ruler = EntityRuler(nlp)
-    # line adds the specified patterns (from the input parameter) to the entity ruler. These patterns define the entities or phrases that the model should recognize.
+    # Initialize the English NLP pipeline
+    nlp = spacy.blank("en")
+    
+    # Create an entity ruler with a unique name
+    ruler = nlp.add_pipe("entity_ruler", name="entity_ruler")
+    
+    # Add patterns to the entity ruler
     ruler.add_patterns(patterns)
-    #  line adds the entity ruler to the NLP pipeline.
-    nlp.add_pipe(ruler)
-    # line saves the entire NLP pipeline (including the entity ruler) to disk with the name "hp_ner".
+    
+    # Save the entire NLP pipeline (including the entity ruler) to disk
     nlp.to_disk("hp_ner")
     
     
 
 
-# a = create_training_data("F:\spacy\data\hp_characters.json", "Person")
-# print(a)
+patterns = create_training_data("data\\hp_characters.json", "PERSON")
+# # print(a)
+generate_rules(patterns)
 
 
+nlp = spacy.load("hp_ner")
+print(nlp)
 
 
+    
