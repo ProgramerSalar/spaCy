@@ -61,8 +61,24 @@ def generate_better_characters(file):
                 new_characters.append(name)
     print(len(new_characters))
     # print("new_character", new_characters)
-        
+    
+    final_characters = []
+    titles = ["Dr.", "Professor", "Mr.", "Mrs.", "Ms.", "Miss", "Aunt", "Uncle", "Mr. and Mrs."]
+    for character in new_characters:
+        if "" != character:
+            final_characters.append(character)
+            for title in titles:
+                titled_char = f"{title} {character}"
+                final_characters.append(titled_char)
+    # print(len(final_characters))
+    final_characters = list(set(final_characters))
+    print(len(final_characters))
+    final_characters.sort()   # arrange the character in order wise 
+    return (final_characters)
                 
+    
+                
+                        
             
     
 
