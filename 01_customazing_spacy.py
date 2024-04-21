@@ -131,8 +131,47 @@ patterns = create_training_data("data\\hp_characters.json", "PERSON")
 generate_rules(patterns)
 
 
+
+
+
 nlp = spacy.load("hp_ner")
-print(nlp)
+# print(nlp)
+
+with open("F:\spacy\data\hp.txt", "r") as f:
+    # print(f)
+    text  = f.read()
+    # print(text)
+    
+    # [1:]: This is a slice operation that takes all elements of the list except for the first one (0 index). 
+    chapters = text.split("CHAPTER")[1:]
+    # print(chapters)
+    for chapter in chapters:
+        # print(chapter)
+# chapter: This is a string variable that presumably contains text data, which includes a chapter number and a chapter title separated by two newline characters (\n\n).
+# .split("\n\n"): This method splits the chapter string into a list of substrings wherever it finds two newline characters. The result is a list where each element is a substring that was separated by "\n\n" in the original string.
+# [0:2]: This is a slice operation that takes the first two elements from the list created by the split method. If there are at least two elements in the list, it will take those; otherwise, it will take as many as are available (which could be just one or none).
+#  Like "Chapter 1\n\nThe Beginning" --> ["Chapter 1", "The Beginning"]
+
+        chapter_num, chapter_title = chapter.split("\n\n")[0:2]
+        # print(chapter_num)
+        # print(chapter_title)
+        chapter_num = chapter_num.strip()
+        # [2:]: This is a slice operation that takes all elements of the list starting from the third element (index 2) to the end. This is used because the first two elements (at index 0 and 1) are usually the chapter number and title, which are not needed if you’re only interested in the content segments themselves.
+        segments = chapter.split("\n\n")[2:]
+        # print(segments)
+        
+        for segment in segments:
+            # print(segment)
+            segment = segment.strip()
+            # print(segment)
+            segment = segment.replace("\n", " ")
+            # print(segment)
+            
+        
+        
+        
+        
+        
 
 
     
