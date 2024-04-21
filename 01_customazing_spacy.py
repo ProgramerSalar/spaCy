@@ -17,7 +17,7 @@ def load_data(file):
 
 def generate_better_characters(file):
     data = load_data(file)
-    print("data", len(data))
+    # print("data", len(data))
     # create a new list in which store the new charater of data 
     new_characters = []
     for item in data:
@@ -59,7 +59,7 @@ def generate_better_characters(file):
                         new_characters.append(x)
                         
                 new_characters.append(name)
-    print(len(new_characters))
+    # print(len(new_characters))
     # print("new_character", new_characters)
     
     final_characters = []
@@ -72,16 +72,36 @@ def generate_better_characters(file):
                 final_characters.append(titled_char)
     # print(len(final_characters))
     final_characters = list(set(final_characters))
-    print(len(final_characters))
+    # print(len(final_characters))
     final_characters.sort()   # arrange the character in order wise 
     return (final_characters)
                 
     
-                
-                        
-            
+
+def create_training_data(file, type):
+    data = generate_better_characters(file)
+    patterns = []
+    for item in data:
+        # print(item)
+        pattern = {
+            "label":type,
+            "pattern":item
+        }
+        # print(pattern)
+        patterns.append(pattern)
+    # print(patterns)
+    return (patterns)
+
+
+def generate_rules(patterns):
+    nlp = English()
+    ruler = EntityRuler(nlp)
+    ruler.add_patterns(patterns)
+    nlp.add_pipe(ruler)
+    nlp.to_disk("hp_ner")
+    
     
 
 
-generate_better_characters('F:\spacy\data\hp_characters.json')
-# print(a)
+a = create_training_data("F:\spacy\data\hp_characters.json", "Person")
+print(a)
