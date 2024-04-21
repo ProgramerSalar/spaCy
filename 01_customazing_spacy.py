@@ -130,6 +130,9 @@ patterns = create_training_data("data\\hp_characters.json", "PERSON")
 # # print(a)
 generate_rules(patterns)
 
+def save_data(file, data):
+    with open(file, "w", encoding="utf-8") as f:
+        json.dump(data,f, indent=4)
 
 def test_model(model, text):
     doc = nlp(text)
@@ -141,7 +144,7 @@ def test_model(model, text):
 
 nlp = spacy.load("hp_ner")
 # print(nlp)
-
+ie_data = {}
 with open("F:\spacy\data\hp.txt", "r") as f:
     # print(f)
     text  = f.read()
@@ -177,7 +180,10 @@ with open("F:\spacy\data\hp.txt", "r") as f:
                 hits.append(result)
                 
             # print(hits)
-                
+            
+            ie_data[chapter_num] = hits
+# print(ie_data)
+save_data("data/harray_poter_data.json", ie_data)            
         
         
         
