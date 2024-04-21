@@ -15,5 +15,23 @@ def load_data(file):
     return (data)
 
 
-# a = load_data('F:\spacy\data\hp_characters.json')
+def generate_better_characters(file):
+    data = load_data(file)
+    # print("data", data)
+    # create a new list in which store the new charater of data 
+    new_characters = []
+    for item in data:
+        new_characters.append(item)  # append data in new list like that new_characters
+        # print(new_characters)
+        
+    for item in data:
+        # we will replace the data 
+        item = item.replace("The", "").replace("the", "").replace("and", "").replace("And", "")
+        # print(item)
+        names = item.split(" ")
+        print(names)
+    
+
+
+generate_better_characters('F:\spacy\data\hp_characters.json')
 # print(a)
