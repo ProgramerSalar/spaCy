@@ -1,4 +1,4 @@
-learn spacy : https://spacy.pythonhumanities.com
+
 
 
 # Spacy Notebook :->
@@ -27,3 +27,23 @@ nlp = spacy.load('en_core_web_sm')
 nlp = spacy.load(r'C:\Users\Mandhata Kumar\AppData\Local\Programs\Python\Python312\Lib\site-packages\en_core_web_sm\en_core_web_sm-3.7.1')
 ```
 Excellent! spaCy is now installed correctly and we have successfully downloaded the small English model. We will pick up here with the code in the next notebook. For now, I want to focus on big-picture items, specifically spaCy “containers”.
+
+### 1.3 Container 
+Containers are spaCy objects that contain a large quantity of data about a text. When we analyze texts with the spaCy framework, we create different container objects to do that. Here is a full list of all spaCy containers. We will be focusing on three (emboldened): Doc, Span, and Token.
+
+* **Doc**
+* DocBin
+* Example 
+* Language 
+* Lexeme 
+* **Span**
+* SpanGroup 
+* **Token**
+
+I created the image below to show how I visualize spaCy containers in my mind. At the top, we have a Doc container. This is the basis for all spaCy. It is the main object that we create. Within the Doc container are many different attributes and subcontainers. One attribute is the Doc.sents, which contains all the sentences in the Doc container. The doc container (and each sentence generator) is made up of a set of token containers. These are things like words, punctuation, etc.
+
+Span containers are kind of like token, in that they are a piece of a Doc container. Spans have one thing that makes them unique. They can cross multiple tokens.
+
+We can give spans a bit more specificity by classifying them into different groups. These are known as SpanGroup containers.
+
+https://spacy.pythonhumanities.com/_images/spacy_containers.png
