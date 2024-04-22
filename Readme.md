@@ -46,4 +46,4 @@ Span containers are kind of like token, in that they are a piece of a Doc contai
 
 We can give spans a bit more specificity by classifying them into different groups. These are known as SpanGroup containers.
 
-https://spacy.pythonhumanities.com/_images/spacy_containers.png
+F:\spaCy-master\Image\spacy_containers.png
