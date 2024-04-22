@@ -50,3 +50,21 @@ print(matches)
 # The match starts at token position 6, which is “hello@rahol.com”.
 # The match ends just before token position 7, which doesn’t exist in this case, indicating the end of the document.
 # So, the start index 6 and end index 7 are based on the token positions, not the character positions in the original text.
+
+
+
+# 16571425990740197027 ye jo token hai o kaya hai or this token kiska hai 
+print(nlp.vocab[matches[0][0]].text)
+
+
+
+# print(nlp.vocab[matches[0][1]].text)
+# print(nlp.vocab[matches[0][2]].text)
+# print(nlp.vocab[matches[0][3]].text)
+# print(nlp.vocab[matches[0][4]].text)
+# print(nlp.vocab[matches[0][5]].text)
+# print(nlp.vocab[matches[0][6]].text)
+# print(nlp.vocab[matches[0][7]].text)
+
+print(nlp.vocab[matches[0][0]])
+
