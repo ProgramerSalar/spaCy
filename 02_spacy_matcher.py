@@ -68,3 +68,5 @@ print(nlp.vocab[matches[0][0]].text)
 
 print(nlp.vocab[matches[0][0]])
 
+
+
