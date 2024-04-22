@@ -1,3 +1,5 @@
+### For the exercise for this notebook, try and develop a custom EntityRuler to find a custom entity in your own domain-specific texts. ###
+
 ## Name Entity Recognition :- 
 
 import spacy 
