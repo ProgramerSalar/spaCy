@@ -2,8 +2,13 @@ learn spacy : https://spacy.pythonhumanities.com
 
 
 # Spacy Notebook :->
+--------------------------------------------------------------------------------------------------------------------------------
+
 
 ## The Basics of spaCy
+In this notebook, we will not be working with spaCy in code, rather in concept. This entire JupyterBook is designed around approaching spaCy top-down. By this I mean approaching the things that spaCy does and can do and then exploring how to implement that in code. I think this is necessary so that as you explore the smaller components of spaCy, such as the Lemmatizer, you will understand how it fits into the larger architecture of the spaCy framework.
+
+## 1.1 What is spaCy ?
 
 A good way to begin is by exploring the question, “What is spaCy?” spaCy (yes, spelled with a lowercase “s” and uppercase “C” is a natural language processing framework. Natural language processing, or NLP, is a branch of linguistics that seeks to parse human language in a computer system. This field is generally referred to as computational linguistics, though it has far reaching applications beyond academic linguistic research.
 
