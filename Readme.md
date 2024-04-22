@@ -1,53 +1,16 @@
 learn spacy : https://spacy.pythonhumanities.com
 
-## 1. Using SpaCy’s EntityRuler
 
-### 1.1. Key Concepts in this Notebook¶
-* pipe
-* factory
-* EntityRuler
-* PhraseMatcher
-* Matcher
+# Spacy Notebook :->
 
-### 1.2. Introduction to Spacy’s EntityRuler¶
-The Python library spaCy offers a few different methods for performing rules-based NER. One such method is via its EntityRuler.
+## The Basics of spaCy
 
-The EntityRuler is a spaCy factory that allows one to create a set of patterns with corresponding labels. A factory in spaCy is a set of classes and functions preloaded in spaCy that perform set tasks. In the case of the EntityRuler, the factory at hand allows the user to create an EntityRuler, give it a set of instructions, and then use this instructions to find and label entities.
+A good way to begin is by exploring the question, “What is spaCy?” spaCy (yes, spelled with a lowercase “s” and uppercase “C” is a natural language processing framework. Natural language processing, or NLP, is a branch of linguistics that seeks to parse human language in a computer system. This field is generally referred to as computational linguistics, though it has far reaching applications beyond academic linguistic research.
 
-Once the user has created the EntityRuler and given it a set of instructions, the user can then add it to the spaCy pipeline as a new pipe. I have spoken in the past notebooks briefly about pipes, but perhaps it is good to address them in more detail here.
+NLP is used in every sector of industry, from academics who leverage it to aid in research to financial analysts who try and predict the stock market. Lawyers use NLP to help analyze thousands of legal documents in seconds to target their research and medical doctors use it to parse patient charts. NLP has been around for decades, but with the increased promise of deep learning, a subfield of machine learning, that NLP rapidly expanded. This is because, as we shall learn all too well throughout this book, language is inherently ambiguous. By this, I mean that language does not always make perfect sense. In some cases, it is entirely illogical. The double-negative in English is a good example of this. In some contexts, it can be an emphatic positive, as in, “I cannot stress this enough, I do not like pasta.” This is, of course a lie. I love pasta, but you get my point. In other cases, the double negative can be an emphatic negative, as in, “I ain’t not doing that!”
 
-A pipe is a component of a pipeline. A pipeline’s purpose is to take input data, perform some sort of operations on that input data, and then output those operations either as a new data or extracted metadata. A pipe is an individual component of a pipeline. In the case of spaCy, there are a few different pipes that perform different tasks. The tokenizer, tokenizes the text into individual tokens; the parser, parses the text, and the NER identifies entities and labels them accordingly. All of this data is stored in the Doc object as we saw in Notebook 01_01 of this series.
+As humans, especially native speakers of a language, we can parse these complex illogical statements with ease, especially with enough context. For computers, this is not always easy.
 
-It is important to remember that pipelines are sequential. This means that components earlier in a pipeline affect what later components receive. Sometimes this sequence is essential, meaning later pipes depend on earlier pipes. At other times, this sequence is not essential, meaning later pipes can function without earlier pipes. It is important to keep this in mind as you create custom spaCy models (or any pipeline for that matter).
-
-In this notebook, we will be looking closely at the EntityRuler as a component of a spaCy model’s pipeline. Off-the-shelf spaCy models come preloaded with an NER model; they do not, however, come with an EntityRuler. In order to incorperate an EntityRuler into a spaCy model, it must be created as a new pipe, given instructions, and then added to the model. Once this is complete, the user can save that new model with the EntityRuler to the disk.
-
-The full documentation of spaCy EntityRuler can be found here: https://spacy.io/api/entityruler .
-
-This notebook with synthesize this documentation for non-specialists and provide some examples of it in action.
-
-### 1.3. Demonstration of EntityRuler in Action¶
-In the code below, we will introduce a new pipe into spaCy’s off-the-shelf small English model. The purpose of this EntityRuler will be to identify small villages in Poland correctly
+Because NLP is such a complex problem for computers, it requires a complex solution. The answer has been found in artificial neural networks, or ANNs or neural nets for short. These are the primary areas of research for deep learning practitioners. As the field of deep learning (and machine learning in general) expand and advance, so too does NLP. New methods for training, such as transformer models, push the field further.
 
 
-
-
-
-
-```
-import spacy 
-
-# build upon the spacy small model 
-nlp = spacy.load(r'C:\Users\Mandhata Kumar\AppData\Local\Programs\Python\Python312\Lib\site-packages\en_core_web_sm\en_core_web_sm-3.7.1')
-
-# simple text 
-# text = "The village of Treblinka is in Poland. Treblinka was also an extermination camp."
-text = "my village Goraper in India. Goraper are located in Bihar"
-# create the Doc object 
-doc = nlp(text)
-
-# extract entities 
-for ent in doc.ents:
-    print(ent.text, ent.label_)
-
-```
