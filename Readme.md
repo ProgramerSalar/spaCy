@@ -52,7 +52,7 @@ We can give spans a bit more specificity by classifying them into different grou
 ![alt text](Image/spacy_containers.png)
 
 
-### Note: You can get all of the notebook code created:
+### Note: You can get all of the notebook here:
 
 |     Number           |Notebook                                  |   Data    |
 |----------------|-------------------------------|---------------------------------------------------|
