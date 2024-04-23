@@ -478,3 +478,53 @@ Here’s a breakdown of the term:
 Nominal: Pertaining to nouns or noun phrases.
 Subject: The part of a sentence or clause that typically indicates what it is about, and which usually comes before the predicate in English1.
 In dependency grammar, which focuses on how words relate to each other, identifying the nsubj is crucial for understanding the structure and meaning of sentences.
+
+
+### 2.5 Part of Speech Tagging (POS)
+in the field of computational linguistics, understanding parts-of-speech is essential. spaCy offers an easy way to parse a text and identify its parts of speech. Below, we will iterate across each token (word or punctuation) in the text and identify its part of speech. 
+
+```
+for token in sentence1:
+    print (token.text, token.pos_, token.dep_)
+```
+
+```
+The DET det
+United PROPN compound
+States PROPN nsubj
+of ADP prep
+America PROPN pobj
+( PUNCT punct
+U.S.A. PROPN appos
+or CCONJ cc
+USA PROPN conj
+) PUNCT punct
+, PUNCT punct
+commonly ADV advmod
+known VERB acl
+as ADP prep
+the DET det
+United PROPN compound
+States PROPN pobj
+( PUNCT punct
+U.S. PROPN appos
+or CCONJ cc
+US PROPN conj
+) PUNCT punct
+or CCONJ cc
+America PROPN conj
+, PUNCT punct
+is AUX ROOT
+a DET det
+country NOUN attr
+primarily ADV advmod
+located VERB acl
+in ADP prep
+North PROPN compound
+America PROPN pobj
+. PUNCT punct
+```
+
+Here, we can see two vital pieces of information: the string and the corresponding part-of-speech (pos). For a complete list of the pos labels, see the spaCy documentation (https://spacy.io/api/annotation#pos-tagging). Most of these, however, should be apparent, i.e. PROPN is proper noun, AUX is an auxiliary verb, ADJ, is adjective, etc. We can visualize this sentence with a diagram through spaCy’s displaCy Notebook feature.
+
+
