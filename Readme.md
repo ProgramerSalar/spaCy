@@ -122,4 +122,27 @@ O
 N
 E
 ```
+ We have printed off each character, including white spaces. Let’s try and do the same with the Doc container.
+
+```
+for token in doc[:10]:
+    print(token)
+```
+output:  in the space are also count 
+```
+CHAPTER
+ONE
+
+
+
+THE
+BOY
+WHO
+LIVED
+
+
+
+Mr.
+and
+```
 
