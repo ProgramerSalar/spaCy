@@ -258,3 +258,12 @@ TypeError: 'generator' object is not subscriptable
 ```
 - The error TypeError: 'generator' object is not subscriptable occurs because doc.sents in spaCy is a generator, and you cannot access elements of a generator using indexing like you would with a list. To fix this error, you can convert the generator to a list first and then access its elements by index. 
 
+```
+sentence1 = list(doc.sents)[0]
+print (sentence1)
+```
+output:
+```
+The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
+```
+Now we have the first sentence. Now that we have a smaller text, let’s explore spaCy’s other building block, the token.
