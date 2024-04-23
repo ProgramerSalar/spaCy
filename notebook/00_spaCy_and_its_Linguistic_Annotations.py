@@ -15,9 +15,32 @@ print(len(doc))
 
 
 
-for token in text[:11]:   # first 11 characters from the text string.
-    print(token)
+# for token in text[:11]:   # first 11 characters from the text string.
+#     print(token)
 
 
-for token in doc[:10]:
-    print(token)
+# for token in doc[:10]:
+#     print(token)
+
+
+# for teken in text.split()[:10]:
+#     print(token)
+
+# word = text.split()[:10]
+# i = 5 
+# for token in doc[i:8]:
+#     print(f"spacy Token {i}: \n {token}\n word split{i}: \n {word[i]} \n\n")
+
+
+# for sent in doc.sents:
+#     print(sent)
+#     print(sent[0])
+
+
+sentence1 = doc.sents[0]
+print(sentence1)
+# The error TypeError: 'generator' object is not subscriptable occurs because doc.sents in spaCy is a generator, and you cannot access elements of a generator using indexing like you would with a list. To fix this error, you can convert the generator to a list first and then access its elements by inde
+
+
+sentence1 = list(doc.sents)[0]
+# print(sentence1)
