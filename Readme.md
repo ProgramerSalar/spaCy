@@ -130,19 +130,65 @@ for token in doc[:10]:
 ```
 output:  in the space are also count 
 ```
-CHAPTER
-ONE
-
-
-
-THE
-BOY
-WHO
-LIVED
-
-
-
-Mr.
-and
+The
+United
+States
+of
+America
+(
+U.S.A.
+or
+USA
+)
 ```
 
+And now we see the magical difference. While on the surface it may seem that the Doc container’s length is dependent on the quantity of words, look more closely. You should notice that the open and close parentheses are also considered an item in the container. These are all known as tokens. Tokens are a fundamental building block of spaCy or any NLP framework. They can be words or punctuation marks. **Tokens** are something that has syntactic purpose in a sentence and is self-contained. A good example of this is the contraction “don’t” in English. When tokenized, or the process of converting the text into tokens, we will have two tokens. “do” and “n’t” because the contraction represents two words, “do” and “not”.
+
+On the surface, this may not seem exceptional. But it is. You may be thinking to yourself that you could easily use the split method in Python to split by whitespace and have the same result. But you’d be wrong. Let’s see why.
+
+```
+for token in text.split()[:10]:
+    print (token)
+
+```
+
+output: 
+```
+The
+United
+States
+of
+America
+(U.S.A.
+or
+USA),
+commonly
+known
+```
+Notice that the parentheses are not removed or handled individually. To see this more clearly, let's print off all tokens from index 5 to 8 in both the text and doc objects.
+
+```
+word = text.split()[:10]
+i = 5 
+for token in doc[i:8]:
+    print(f"spacy Token {i}: \n {token}\n word split{i}: \n {word[i]} \n\n")
+```
+output:
+```
+SpaCy Token 5:
+(
+Word Split 5:
+(U.S.A.
+
+
+SpaCy Token 6:
+U.S.A.
+Word Split 6:
+or
+
+
+SpaCy Token 7:
+or
+Word Split 7:
+USA),
+```
