@@ -4,8 +4,11 @@
 # Spacy Notebook :->
 --------------------------------------------------------------------------------------------------------------------------------
 
+Mr. Manish kumar 
+- April 2024
 
-## The Basics of spaCy
+
+## 1. The Basics of spaCy
 * In this notebook, we will not be working with spaCy in code, rather in concept. This entire JupyterBook is designed around approaching spaCy top-down. By this I mean approaching the things that spaCy does and can do and then exploring how to implement that in code. I think this is necessary so that as you explore the smaller components of spaCy, such as the Lemmatizer, you will understand how it fits into the larger architecture of the spaCy framework.
 
 ###  1.1 What is spaCy ?
@@ -47,3 +50,40 @@ Span containers are kind of like token, in that they are a piece of a Doc contai
 We can give spans a bit more specificity by classifying them into different groups. These are known as SpanGroup containers.
 
 ![alt text](Image/spacy_containers.png)
+
+
+## 2. Getting Started with spaCy and its Linguistic Annotations
+
+
+In this chapter, we will start working with spaCy directly. The goals of this chapter are twofold. First, it is my hope that you understand the basic spaCy syntax for creating a Doc container and how to call specific attributes of that container. Second, it is my hope that you leave this chapter with a basic understanding of the vast linguistic annotations available in spaCy. While we will not explore all attributes, we will deal with many of the most important ones, such as lemmas, parts-of-speech, and named entities. By the time you are finished with this chapter, you should have enough of a basic understanding of spaCy to begin applying it to your own texts.
+
+### 2.1 Importing Spacy and Loading Data 
+```
+import spacy
+nlp = spacy.load("en_core_web_sm")
+with open("F:\spaCy-master\data\hp.txt", "r") as f:
+    text = f.read()
+    print(text)
+```
+
+### 2.2 Creating a Doc Container 
+with the data loaded in it's time to make our Doc container. Unless you are working with multiple Doc containers. it is best practice to always call this object 'doc', all lowercase. To create a doc container, we will usually just call our nlp object and padd our text to it as single argument. 
+
+```
+doc = nlp(text)
+print(doc)
+``` 
+output: 
+```
+The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America. It consists of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor possessions.[j] At 3.8 million square miles (9.8 million square kilometers), it is the world's third- or fourth-largest country by total area.[d] The United States shares significant land borders with Canada to the north and Mexico to the south, as well as limited maritime borders with the Bahamas, Cuba, and Russia.[22] With a population of more than 331 million people, it is the third most populous country in the world. The national capital is Washington, D.C., and the most populous city is New York.
+
+Paleo-Indians migrated from Siberia to the North American mainland at least 12,000 years ago, and European colonization began in the 16th century. The United States emerged from the thirteen British colonies established along the East Coast. Disputes over taxation and political representation with Great Britain led to the American Revolutionary War (1775â€“1783), which established independence. In the late 18th century, the U.S. began expanding across North America, gradually obtaining new territories, sometimes through war, frequently displacing Native Americans, and admitting new states; by 1848, the United States spanned the continent. Slavery was legal in the southern United States until the second half of the 19th century when the American Civil War led to its abolition. The Spanishâ€“American War and World War I established the U.S. as a world power, a status confirmed by the outcome of World War II.
+
+During the Cold War, the United States fought the Korean War and the Vietnam War but avoided direct military conflict with the Soviet Union. The two superpowers competed in the Space Race, culminating in the 1969 spaceflight that first landed humans on the Moon. The Soviet Union's dissolution in 1991 ended the Cold War, leaving the United States as the world's sole superpower.
+
+The United States is a federal republic and a representative democracy with three separate branches of government, including a bicameral legislature. It is a founding member of the United Nations, World Bank, International Monetary Fund, Organization of American States, NATO, and other international organizations. It is a permanent member of the United Nations Security Council. Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by centuries of immigration. The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption. However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.
+
+
+```
+
+
