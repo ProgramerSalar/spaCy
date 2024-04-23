@@ -50,3 +50,10 @@ Span containers are kind of like token, in that they are a piece of a Doc contai
 We can give spans a bit more specificity by classifying them into different groups. These are known as SpanGroup containers.
 
 ![alt text](Image/spacy_containers.png)
+
+
+### Note: You can get all of the notebook code created:
+
+|     Number           |Notebook                                  |   Data    |
+|----------------|-------------------------------|-----------------------------|
+|  00   |     [spaCy and its Linguistic Annotations](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/00_spaCy_and_its_Linguistic_Annotations.ipynb)    |      [wiki_us](https://github.com/ProgramerSalar/spaCy/blob/manish/data/wiki_us.txt)     |
