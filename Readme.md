@@ -297,7 +297,129 @@ States
 
 #### 2.4.1 Text 
 ```
-> token2.text
+ token2.text
 ```
-> is
+output:
+```
+'States'
+```
 
+#### 2.4.2 Head 
+```
+token2.head
+```
+output:
+```
+is
+```
+In the context of spaCy, an NLP library for Python, head = token2.head is a line of code that assigns the syntactic head of token2 to the variable head. Here’s what this means:
+
+Token: In spaCy, a token is an individual word, punctuation symbol, whitespace, etc., in the processed text1.
+Head: The head of a token is the main word that connects it to the rest of the sentence. It’s a central concept in dependency grammar, which is used by spaCy to describe the syntactic structure of a sentence2.
+So, token2.head retrieves the token that is the syntactic head of token2. The head is the parent token in the dependency tree, which represents the grammatical structure of the sentence. This relationship helps in understanding the grammatical dependencies between words in a sentence.
+
+For example, in the sentence “The cat sat on the mat,” if token2 is the word “sat,” then token2.head would be “sat” itself, because “sat” is the main verb of the sentence and serves as the head of its own dependency subtree.
+
+#### 2.4.3 Left Edge 
+```
+token2.left_edge
+```
+ouput:
+```
+The
+```
+In spaCy, token2.left_edge refers to the leftmost token of token2’s syntactic descendants in the dependency parse of a sentence1. This means it gives you the earliest token in the sentence that is part of the subtree rooted at token2. The subtree includes token2 and all the tokens that are syntactically dependent on token2.
+
+For example, consider the sentence “I like New York in Autumn.” If token2 is “York,” then token2.left_edge would be “New,” as “New” is the leftmost token in the phrase “New York.”
+
+#### 2.4.4 Right Edge 
+```
+token2.right_edge
+```
+output:
+```
+America
+```
+In spaCy, token2.right_edge refers to the rightmost token of token2’s syntactic descendants in the dependency parse of a sentence1. This means it gives you the last token in the sentence that is part of the subtree rooted at token2. The subtree includes token2 and all the tokens that are syntactically dependent on token2.
+
+For instance, if you have the sentence “The quick brown fox jumps over the lazy dog,” and token2 is “fox,” then token2.right_edge would be “dog,” as “dog” is the rightmost token in the phrase “the lazy dog” which is dependent on “fox.”
+
+#### 2.4.5 Entity Type 
+```
+token2.ent_type
+```
+
+Certainly! In spaCy, token2.ent_type is an attribute that returns the named entity type of the token if it is part of a named entity1. If the token is not part of a named entity, this attribute will return an empty string.
+
+Named entities are real-world objects, such as persons, locations, organizations, products, etc., that can be denoted with a proper name. For example, in the sentence “Paris is the capital of France,” “Paris” and “France” would be recognized as entities of type ‘GPE’ (Geopolitical Entity).
+
+
+```
+token2.ent_type_
+```
+output:
+```
+'GPE'
+```
+
+#### 2.4.6 Ent IOB 
+
+IOB code of named entity tag. “B” means the token begins an entity, “I” means it is inside an entity, “O” means it is outside an entity, and "" means no entity tag is set.
+
+In spaCy, token2.ent_iob_ is an attribute that returns the IOB code of the named entity tag associated with the token as a string1. IOB tagging is a common format for tagging tokens in a chunking task, where each token is tagged with one of the following codes:
+
+“I” (Inside): The token is inside an entity.
+“O” (Outside): The token is outside an entity.
+“B” (Beginning): The token is the beginning of an entity.
+This attribute is particularly useful for named entity recognition (NER) tasks, where you want to identify the boundaries of named entities in your text. For example, in a sentence like “Apple is based in California,” if token2 represents “Apple,” token2.ent_iob_ would likely return “B,” indicating that “Apple” is at the beginning of an entity that spans multiple tokens2. 😊
+
+
+
+```
+token2.ent_iob_
+```
+output:
+```
+'I'
+```
+IOB is a method of annotating a text. In this case, we see “I” because states is inside an entity, that is to say that it is part of the United States of America.
+
+
+#### 2.4.7 Lemma
+
+```
+token2.lemma_
+```
+```
+'States'
+```
+In spaCy, token2.lemma_ is an attribute that returns the lemma of the token as a string1. A lemma is the base or dictionary form of a word. For example, the lemma of “running” is “run,” and the lemma of “mice” is “mouse.”
+
+Lemmatization is the process of reducing a word to its base or root form. This is useful in natural language processing tasks to normalize words so that different forms of the same word are treated as the same item, which can be important for tasks like text analysis, information retrieval, and machine learning.
+
+
+### 2.4.8 Morph
+```
+sentence1[12].morph
+```
+```
+Aspect=Perf|Tense=Past|VerbForm=Part
+```
+The code sentence1[12].morph in spaCy is used to access the morphological features of the 13th token in the first sentence of a processed document1. The morph attribute provides detailed information about the grammatical properties of the token, such as tense, number, case, and gender, depending on the language’s morphology.
+
+Here’s a breakdown of the code:
+
+sentence1: This variable is expected to hold the first sentence of a document, which is a Span object in spaCy.
+[12]: This is an index that specifies the 13th token in the sentence (since indexing starts at 0).
+.morph: This attribute of a Token object contains the morphological details of the token.
+For example, if you have a sentence like “The cats are sitting on the mat,” and you process this sentence with spaCy, then sentence1[12].morph would give you the morphological features of the 13th token, if there are that many tokens in the sentence. If the sentence has fewer tokens, trying to access sentence1[12] would result in an IndexError.
+
+To use this attribute correctly, ensure that the sentence has enough tokens to avoid an index out of range error, and remember that the morphological analysis depends on the language model you are using with spaCy. 😊
+
+
+- The output “Aspect=Perf|Tense=Past|VerbForm=Part” is a set of morphological features describing a verb form in a sentence:
+
+- Aspect=Perf: This indicates the verb is in the perfect aspect, which means the action is completed. The perfect aspect is used to express an action that has been finished at some point in the past, present, or future1.
+Tense=Past: This denotes that the verb is in the past tense, referring to an action or state that occurred in the past2.
+VerbForm=Part: This specifies that the verb form is a participle. In English, participles are verb forms used to make perfect tenses or passive voice. They can also be used as adjectives. The past participle is often formed by adding -ed, -d, -t, -en, or -n to the base form of the verb2.
+So, when you see “Aspect=Perf|Tense=Past|VerbForm=Part,” it describes a past participle form of a verb that is used to construct perfect tenses, indicating a completed action in the past. An example would be the word “written” in the sentence “The book has been written.” 😊
