@@ -53,6 +53,7 @@ We can give spans a bit more specificity by classifying them into different grou
 
 
 ## 2. Getting Started with spaCy and its Linguistic Annotations
+i was write the code [This notebook]("https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/00_spaCy_and_its_Linguistic_Annotations.py")
 
 
 In this chapter, we will start working with spaCy directly. The goals of this chapter are twofold. First, it is my hope that you understand the basic spaCy syntax for creating a Doc container and how to call specific attributes of that container. Second, it is my hope that you leave this chapter with a basic understanding of the vast linguistic annotations available in spaCy. While we will not explore all attributes, we will deal with many of the most important ones, such as lemmas, parts-of-speech, and named entities. By the time you are finished with this chapter, you should have enough of a basic understanding of spaCy to begin applying it to your own texts.
@@ -90,8 +91,16 @@ if you know that what is the lengeth of of text and what is the lengeht of docum
 print(len(text))
 print(len(doc))
 ```
-    ```
-    3225
-    652
-    ``` 
+output: 
+```
+3225
+652
+```
+
+what is going on here? Same text, but different length. Why does the occur? To answer that let's explore it more deeply and try and print off each item in each object. 
+```
+for token in text[:10]:  
+    print(token)
+``` 
+output: 
 
