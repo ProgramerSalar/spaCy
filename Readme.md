@@ -56,5 +56,5 @@ We can give spans a bit more specificity by classifying them into different grou
 
 |     Number           |Notebook                                  |   Data    |
 |----------------|-------------------------------|---------------------------------------------------|
-|  00   |     [spaCy and its Linguistic Annotations](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/00_spaCy_and_its_Linguistic_Annotations.ipynb)    |      [wiki_us](https://github.com/ProgramerSalar/spaCy/blob/manish/data/wiki_us.txt)     |
-|  01    |
+|  02   |     [spaCy and its Linguistic Annotations](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/02_spaCy_and_its_Linguistic_Annotations.ipynb)    |      [wiki_us](https://github.com/ProgramerSalar/spaCy/blob/manish/data/wiki_us.txt)     |
+|  03    |
