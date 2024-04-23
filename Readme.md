@@ -82,8 +82,16 @@ Paleo-Indians migrated from Siberia to the North American mainland at least 12,0
 During the Cold War, the United States fought the Korean War and the Vietnam War but avoided direct military conflict with the Soviet Union. The two superpowers competed in the Space Race, culminating in the 1969 spaceflight that first landed humans on the Moon. The Soviet Union's dissolution in 1991 ended the Cold War, leaving the United States as the world's sole superpower.
 
 The United States is a federal republic and a representative democracy with three separate branches of government, including a bicameral legislature. It is a founding member of the United Nations, World Bank, International Monetary Fund, Organization of American States, NATO, and other international organizations. It is a permanent member of the United Nations Security Council. Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by centuries of immigration. The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption. However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.
-
-
 ```
 
+if you know that what is the lengeth of of text and what is the lengeht of document -> if you count the length of document then lengeth are decrease compre to the length of text 
+
+```
+print(len(text))
+print(len(doc))
+```
+```
+3225
+652
+``` 
 
