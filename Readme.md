@@ -90,8 +90,8 @@ if you know that what is the lengeth of of text and what is the lengeht of docum
 print(len(text))
 print(len(doc))
 ```
-```
-3225
-652
-``` 
+    ```
+    3225
+    652
+    ``` 
 
