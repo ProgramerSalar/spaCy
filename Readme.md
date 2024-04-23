@@ -267,3 +267,32 @@ output:
 The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
 ```
 Now we have the first sentence. Now that we have a smaller text, let’s explore spaCy’s other building block, the token.
+
+### 2.4 TOken Attributes 
+the token object contains  a lot of different attributes that are VITAL do performing NLP in spacy. we will be working with a few of them, such as:
+
+* .text 
+* .head 
+* .left_edge 
+* .right_edge 
+* .ent_type_
+* .iob_
+* .lemma_ 
+* .morph 
+* .pos_ 
+* .dep_ 
+* .lang_
+
+i will berify describe these here and show you how to grab each one and what they look like. We will be exploring each of these attributes more deeply in this chapter and future and future chapter. To demonstrate each of these attribute. we will use one token, "States" which is part of a sequence of tokens that make up "This united state of America" 
+
+
+```
+token2 = sentence1[2]
+print (token2)
+```
+output:
+```
+States
+````
+
+#### 2.4.1 Text 
