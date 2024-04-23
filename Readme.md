@@ -97,10 +97,29 @@ output:
 652
 ```
 
-what is going on here? Same text, but different length. Why does the occur? To answer that let's explore it more deeply and try and print off each item in each object. 
+The code snippet you’ve provided is a Python loop that iterates over the first 11 characters of a string variable named text and prints each character individually. Here’s a breakdown of what each part of the code does:
+
+for token in text[:11]:: This is a for loop that goes through each element in the sequence text[:11]. The text[:11] is a slice notation that retrieves the first 11 characters from the text string.
+print(token): Inside the loop, each character (referred to as token) is printed out on a separate line.
+If text is a string, this code will print the first 11 characters of that string. If text is a list or another iterable with at least 11 elements, it will print the first 11 elements of that iterable.
+
+Here’s an example to illustrate:
 ```
-for token in text[:10]:  
+for token in text[:10]:   #  first 11 characters from the text string.
     print(token)
 ``` 
 output: 
+```
+C
+H
+A
+P
+T
+E
+R
+
+O
+N
+E
+```
 
