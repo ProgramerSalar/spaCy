@@ -390,6 +390,7 @@ IOB is a method of annotating a text. In this case, we see “I” because state
 ```
 token2.lemma_
 ```
+output:
 ```
 'States'
 ```
@@ -402,6 +403,7 @@ Lemmatization is the process of reducing a word to its base or root form. This i
 ```
 sentence1[12].morph
 ```
+output:
 ```
 Aspect=Perf|Tense=Past|VerbForm=Part
 ```
@@ -423,3 +425,56 @@ To use this attribute correctly, ensure that the sentence has enough tokens to a
 Tense=Past: This denotes that the verb is in the past tense, referring to an action or state that occurred in the past2.
 VerbForm=Part: This specifies that the verb form is a participle. In English, participles are verb forms used to make perfect tenses or passive voice. They can also be used as adjectives. The past participle is often formed by adding -ed, -d, -t, -en, or -n to the base form of the verb2.
 So, when you see “Aspect=Perf|Tense=Past|VerbForm=Part,” it describes a past participle form of a verb that is used to construct perfect tenses, indicating a completed action in the past. An example would be the word “written” in the sentence “The book has been written.” 😊
+
+
+#### 2.4.9 Part of Speech
+
+```
+token2.pos_
+```
+output:
+```
+'PROPN'
+```
+
+Certainly! In spaCy, token2.pos_ is an attribute that returns the part-of-speech (POS) tag of the token as a string1. The POS tag represents the grammatical category of the token, such as ‘NOUN’, ‘VERB’, ‘ADJ’ (adjective), etc. These tags are based on the Universal Dependencies scheme, which provides a consistent set of POS tags across different languages1.
+
+For example, if token2 is the word ‘running’ in a sentence, token2.pos_ might return ‘VERB’ to indicate that ‘running’ is being used as a verb in that context.
+
+
+#### 2.4.10 Language 
+```
+token2.lang_
+```
+output:
+```
+'en'
+```
+In spaCy, token2.lang_ is an attribute that would return the language code of the document from which the token originates1. However, it’s important to note that as of my last update, spaCy tokens do not have a lang_ attribute directly associated with them. Instead, the language of the document can be determined by the model loaded into spaCy, as each model is specific to a language (e.g., ‘en_core_web_sm’ for English).
+
+If you’re working with a spaCy Doc object, which represents a processed body of text, you can check the language of the document by accessing the lang_ attribute of the Doc
+
+
+#### 2.4.11 Syntatic Dependency
+
+```
+token2.dep_
+```
+output:
+```
+'nsubj'
+```
+dep_ stands for dependency tag and is used to get the syntactic dependency relation of a token within a sentence1.
+
+For example, if token2 is a word in a sentence that has been processed by spaCy, token2.dep_ would return the dependency relation of that word to other tokens in the sentence. Dependency relations can be labels like ‘nsubj’ for nominal subject, ‘dobj’ for direct object, etc., which help in understanding the grammatical structure of the sentence.
+
+
+The output 'nsubj' stands for nominal subject in dependency parsing. It refers to a nominal element that acts as the syntactic subject or the proto-agent of a clause1. This means it is the entity performing the action or the one that the sentence is primarily about. In other words, it’s the “doer” of the action. The nsubj relation is used to connect the subject to the verb it is associated with.
+
+For example, in the sentence “The cat sat on the mat,” ‘The cat’ would be tagged as nsubj because it is the subject performing the action of sitting.
+
+Here’s a breakdown of the term:
+
+Nominal: Pertaining to nouns or noun phrases.
+Subject: The part of a sentence or clause that typically indicates what it is about, and which usually comes before the predicate in English1.
+In dependency grammar, which focuses on how words relate to each other, identifying the nsubj is crucial for understanding the structure and meaning of sentences.
