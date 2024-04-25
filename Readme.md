@@ -54,8 +54,8 @@ We can give spans a bit more specificity by classifying them into different grou
 
 ### Note: You can get all of the notebook here:
 
-|     Number           |Notebook                                  |   Data    |
-|----------------|-------------------------------|---------------------------------------------------|
+|     Number           |Notebook                                  |   Data    |        Exercise                 |
+|---------------------------|-------------------------------|---------------------------------------------------|-------------------|
 | 01    |  [Intrduction of spaCy](https://github.com/ProgramerSalar/spaCy/blob/manish/Readme.md)
 |  02   |     [spaCy and its Linguistic Annotations](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/02_spaCy_and_its_Linguistic_Annotations.ipynb)    |      [wiki_us](https://github.com/ProgramerSalar/spaCy/blob/manish/data/wiki_us.txt)     |
 |  03    | [Word Vectors and spaCy](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/03_Word_Vectors_and_spaCy.ipynb) | [wiki_us](https://github.com/ProgramerSalar/spaCy/blob/manish/data/wiki_us.txt) |
