@@ -64,4 +64,4 @@ We can give spans a bit more specificity by classifying them into different grou
 | 06 | [How to use the spaCy Matcher](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/06_spaCy_Matcher.ipynb) | [wiki_mlk](https://github.com/ProgramerSalar/spaCy/blob/manish/data/wiki_mlk.txt), [alice](https://github.com/ProgramerSalar/spaCy/blob/manish/data/alice.json) | 
 | 07 | [How To use RegEx in spaCy[Basic]](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/07_Regex_with_spaCy.ipynb) | 
 | 08 | [How to use RegEx in spaCy[Advance]](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/08_Multi-word-Token-Entities.ipynb) |
-| 09 | [Financial Analysis with spaCy]()
+| 09 | [Financial Analysis with spaCy](https://github.com/ProgramerSalar/spaCy/blob/manish/notebook/09_Financial_Analysis.ipynb) | 
